@@ -6,26 +6,26 @@ title: Home
 # Methodology Assignment 4 — Task 2
 
 **Name & Email**  
-Diego Arevalo-Fernandez — darevalofernandez@ucsd.edu
+Diego Arevalo Fernandez — darevalofernandez@ucsd.edu
 
 **Section & Mentor**  
-Section: _[fill in]_  
-Mentor: _[fill in]_
+Section: B13: Wildfire and Property Intelligence Modeling with Cotality  
+Mentor: Ilyes Meftah
 
 ---
 
 **What is the most interesting topic covered in your domain this quarter?**  
-I’m most interested in **spatiotemporal wildfire risk modeling**—specifically how climate signals (PRISM), vegetation dynamics (MODIS NDVI), land cover (NLCD), and topography combine to shape ignition and spread risk at ~800 m resolution.
+The most interesting topic has been spatiotemporal wildfire prediction using publicly available environmental data.  I’ve learned how climate, vegetation, and topographic variables—such as PRISM temperature and precipitation, MODIS NDVI, NLCD land cover, and USGS elevation—interact to drive ignition risk and burn severity.  I find the idea of combining these heterogeneous geospatial layers into a single predictive model fascinating because it blends environmental science, remote sensing, and machine learning into one reproducible pipeline.
 
 **Describe a potential investigation you would like to pursue for your Quarter 2 Project.**  
-Build a **monthly wildfire occurrence forecaster** for San Diego County that outputs calibrated probabilities per 800 m grid cell. I’d compare baselines (regularized logistic regression, GAM) to tree ensembles (XGBoost, LightGBM) and a spatial model. I’d emphasize **spatial cross-validation**, lagged features (e.g., 1–3 month NDVI/VPD lags), and **model interpretability (SHAP)**.
+For Quarter 2, I would like to build an early-season wildfire risk forecasting tool for San Diego County.  Using the same gridded datasets from Quarter 1, I’d extend the model to predict not only where fires occur but also when conditions become most conducive to ignition and spread.  The goal would be to integrate temporal features (e.g., lagged NDVI or VPD) and ensemble models (Random Forest, XGBoost, and GAMs) to produce a monthly burn-probability map.  The final output could be an interactive web dashboard displaying real-time predicted risk and historical validation metrics.
 
 **What is a potential change you’d make to the approach taken in your current Quarter 1 Project?**  
-Improve **evaluation and calibration**: move from random CV to **spatial block CV**, address **class imbalance** with focal loss/threshold tuning, and add **conformal prediction** or Platt/Isotonic calibration so probabilities are well-calibrated across space and time.
+In Quarter 1 we focused mainly on static classification within burn perimeters.  A key improvement would be to incorporate temporal dynamics and calibration.  Rather than treating each burn scar independently, I’d implement spatial-temporal cross-validation and include lag features to capture pre-fire environmental trends.  Additionally, I’d enhance interpretability and uncertainty estimation using SHAP values and conformal prediction so that our probability maps communicate model confidence as well as accuracy.
 
 **What other techniques would you be interested in using in your project?**  
-- **GAMs** for smooth, interpretable effects; **gradient boosting** for nonlinear interactions  
-- **Conformal prediction** for uncertainty bands on risk maps  
-- **HDBSCAN/BERTopic** to cluster fire events by conditions or seasonality  
-- **Partial dependence/accumulated local effects** and **SHAP** for interpretability  
-- **Time-aware feature engineering** (rolling stats, lags) and **geospatial CV**
+- GAMs for smooth, interpretable effects; gradient boosting for nonlinear interactions  
+- Conformal prediction for uncertainty bands on risk maps  
+- HDBSCAN/BERTopic to cluster fire events by conditions or seasonality  
+- Partial dependence/accumulated local effects** and SHAP for interpretability  
+- Time-aware feature engineering (rolling stats, lags) and geospatial CV
